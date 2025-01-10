@@ -2,8 +2,15 @@ set1={'Ram', 'Shyam', 'Jenny'}
 set2={'Jenny','Jiya', 'Aakash'}
 set3={'Ankur','Pradeep','Ram'}
 
-# print(set1.union(set2))
+# print(set1.union(('Mohan','Jenny')))
 # set2.union(set1)
+
+# print(set1 |set2)
+
+# set2.update(['Jenny','Mohan'])
+# set1 |=set2
+# print(set1)
+# print(set2)
 
 # print(set1 | set2| set3)
 
@@ -16,6 +23,9 @@ set3={'Ankur','Pradeep','Ram'}
 # Intersection
 
 # print(set1.intersection(set2,set3))
+# set2.intersection_update(set1)
+# print(set1)
+# print(set2)
 
 # print(set1 & set2)
 
@@ -30,7 +40,6 @@ set3={'Ankur','Pradeep','Ram'}
 # print(set1-set2)
 
 # set2.difference_update(set1)
-#
 # print(set1)
 # print(set2)
 
@@ -39,7 +48,7 @@ set3={'Ankur','Pradeep','Ram'}
 
 # print(set1^set2^set3)
 set1.symmetric_difference_update(['Mohan','Shiva'])
-# print(set1)
-# print(set2)
+print(set2)
+print(set1)
 
 # More operations

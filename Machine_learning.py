@@ -41,7 +41,9 @@ X= preprocessing.scale(X)
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=42)
 
 # 1. First: Create model and perform cross-validation
+model = LinearRegression()
 cv_scores= cross_val_score(model,X_train,y_train, cv=5)
+
 
 # Print cross-validation results
 print("Cross-validation scores:", cv_scores)
@@ -52,7 +54,7 @@ print("Standard deviation of CV scores:", cv_scores.std())
 model.fit(X_train, y_train)
 
 # 3. Finally: Save the fitted model
-model = LinearRegression()
+
 with open('linearregression.pickle', 'wb') as f:
     pickle.dump(model,f)
 
@@ -108,4 +110,49 @@ plt.scatter(predict_x, predict_y, color ='g')
 plt.plot(xs,regression_line)
 plt.show()
 
+
+# Alternate way of Getting R Squared
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+import numpy as np
+
+# create and fit the model
+model = LinearRegression()
+model.fit(X_train,y_train)
+
+# Getting model cofficients and intercept
+coefficients = model.coef_
+intercept = model.intercept_
+
+# Get R-squared (multiple ways)
+#Method 1: Using model.score()
+
+r2_train = model.score(X_train, y_train)
+r2_test = model.score(X_test,y_test)
+
+# Method2 : Using r2_score
+y_pred = model.predict(X_test)
+r2 = r2_score(y_test,y_pred)
+
+print("R-squared (Training):", r2_train)
+print('R-squared (Texting:', r2_test)
+
+#Making Predictions
+
+# For Single predictions
+# single_prediction = model.predict([[feature1_value, feature2_value]])
+
+#For multiple predictions
+predictions = model.predict(X_test)
+
+# if you have features names
+
+feature_names =['feature1','Feature2',"Feature3"]
+
+for feature, coef in zip(feature_names,coefficients):
+    print(f"{feature}: {coef:.4f}")
+
+print(f"\nEquation: y= {intercept:.4f}, end ='")
+for i, coef in enumerate(coefficients):
+    print(f"+ ({coef:.4f} * {feature_names[i]})", end ='')
 
