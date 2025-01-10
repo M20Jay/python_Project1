@@ -41,10 +41,15 @@ X= preprocessing.scale(X)
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=42)
 
 # 1. First: Create model and perform cross-validation
+<<<<<<< HEAD
 model = LinearRegression()
 cv_scores= cross_val_score(model,X_train,y_train, cv=5)
 
 
+=======
+cv_scores= cross_val_score(model,X_train,y_train, cv=5)
+
+>>>>>>> d2f791b7029521a7e163bfbf50fc87035f2c9568
 # Print cross-validation results
 print("Cross-validation scores:", cv_scores)
 print("Mean CV score:", cv_scores.mean())
@@ -54,7 +59,11 @@ print("Standard deviation of CV scores:", cv_scores.std())
 model.fit(X_train, y_train)
 
 # 3. Finally: Save the fitted model
+<<<<<<< HEAD
 
+=======
+model = LinearRegression()
+>>>>>>> d2f791b7029521a7e163bfbf50fc87035f2c9568
 with open('linearregression.pickle', 'wb') as f:
     pickle.dump(model,f)
 
@@ -111,6 +120,7 @@ plt.plot(xs,regression_line)
 plt.show()
 
 
+<<<<<<< HEAD
 # Alternate way of Getting R Squared
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
@@ -156,3 +166,5 @@ print(f"\nEquation: y= {intercept:.4f}, end ='")
 for i, coef in enumerate(coefficients):
     print(f"+ ({coef:.4f} * {feature_names[i]})", end ='')
 
+=======
+>>>>>>> d2f791b7029521a7e163bfbf50fc87035f2c9568
