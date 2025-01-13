@@ -28,4 +28,4 @@ while not game_over:
     if '-' not in display:
         game_over=True
         print("You win")
-    print(hangman_stages.graphic[lives])
+    print(hangman_stages.stages[lives])
