@@ -31,6 +31,15 @@ a,b =5,4
 # print(a<4 or b <3)
 
  # logical Not
-print(not(a<6))
+# print(not(a<6))
+#
+# print(a<3 and b==3)
 
-print(a<3 and b==3)
+
+#Membership operators
+str = "Jenny Khatri"
+# print('enY' in str)
+# print('B' not in str)
+
+l1=[2,67,0,-7,45]
+print(21 not in l1)
