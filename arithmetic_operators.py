@@ -37,9 +37,19 @@ a,b =5,4
 
 
 #Membership operators
-str = "Jenny Khatri"
-# print('enY' in str)
-# print('B' not in str)
+# str = "Jenny Khatri"
+# # print('enY' in str)
+# # print('B' not in str)
+#
+# l1=[2,67,0,-7,45]
+# print(21 not in l1)
 
-l1=[2,67,0,-7,45]
-print(21 not in l1)
+# Identity operators
+a = 5.0
+print(id(a))
+b = 5
+
+print(id(b))
+
+print(a is b)
+
